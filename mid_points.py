@@ -24,6 +24,11 @@ def calc_midpoint(x_y_f_left: List[int], x_y_f_right: List[int]) -> List[int]:
     x_l, y_l, f_l = x_y_f_left
     x_r, y_r, f_r = x_y_f_right
 
+    # если обе ноги в воздухе
+    if f_l + f_r <= 0:
+        point = [0, 0]
+        return point
+
     # средняя точка без учёта веса на каждой и ног
     x_cen = (x_l + x_r) / 2
     y_cen = (y_l + y_r) / 2
